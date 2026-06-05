@@ -82,17 +82,17 @@ export function formatDate(value?: string) {
 
 export const fallbackImages = {
   hero:
-    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85",
+    "https://images.unsplash.com/photo-1774301582912-29fbd0a4f1cd?auto=format&fit=crop&w=1800&q=85",
   rice:
-    "https://images.unsplash.com/photo-1533460004989-cef01064af7e?auto=format&fit=crop&w=900&q=85",
+    "https://images.unsplash.com/photo-1572908721147-0a9eb395762d?auto=format&fit=crop&w=900&q=85",
   grapes:
-    "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=900&q=85",
+    "https://images.unsplash.com/photo-1659403861630-d25fc0953ef8?auto=format&fit=crop&w=900&q=85",
   vegetables:
-    "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=85",
+    "https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?auto=format&fit=crop&w=900&q=85",
   winter:
-    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85",
+    "https://images.unsplash.com/photo-1760277110716-ce2b0b7ae379?auto=format&fit=crop&w=900&q=85",
   field:
-    "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=85",
+    "https://images.unsplash.com/photo-1763905586215-9e43fc2da8f1?auto=format&fit=crop&w=1200&q=85",
   market:
-    "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=85"
+    "https://images.unsplash.com/photo-1727295019821-96e0c88d273b?auto=format&fit=crop&w=1200&q=85"
 };
