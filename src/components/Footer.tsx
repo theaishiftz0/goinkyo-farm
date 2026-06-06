@@ -2,16 +2,16 @@ import Link from "next/link";
 import NavIcon from "@/components/NavIcon";
 
 const footerNavigation = [
-  { href: "/about", label: "ご隠居について", icon: "about" },
-  { href: "/crops", label: "作物紹介", icon: "crops" },
-  { href: "/diary", label: "農園の日々", icon: "diary" },
-  { href: "/sales", label: "販売情報", icon: "sales" },
-  { href: "/contact", label: "お問い合わせ", icon: "contact" }
+  { href: "#about", label: "ごあいさつ", icon: "about" },
+  { href: "#diary", label: "農園の日々", icon: "diary" },
+  { href: "#crops", label: "育てているもの", icon: "crops" },
+  { href: "#sales", label: "販売場所", icon: "sales" },
+  { href: "#contact", label: "お問い合わせ", icon: "contact" }
 ] as const;
 
 export default function Footer() {
   return (
-    <footer className="border-t-4 border-accent bg-[#24392a] py-12 font-sans text-white/86">
+    <footer className="border-t-4 border-accent bg-primary-hover py-12 font-sans text-white/86">
       <div className="mx-auto max-w-6xl px-6 text-center">
         <p className="mb-2 text-lg font-bold text-white">信州のご隠居ファーム</p>
         <p className="mx-auto mb-6 max-w-xl text-sm leading-7 text-white/78">

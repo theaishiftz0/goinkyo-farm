@@ -29,13 +29,17 @@ export async function getDiaryList(
     return emptyList<Diary>();
   }
 
-  return client.getList<Diary>({
-    endpoint: "diary",
-    queries: {
-      orders: "-publishedAt",
-      ...queries
-    }
-  });
+  try {
+    return await client.getList<Diary>({
+      endpoint: "diary",
+      queries: {
+        orders: "-publishedAt",
+        ...queries
+      }
+    });
+  } catch {
+    return emptyList<Diary>();
+  }
 }
 
 export async function getDiaryBySlug(slug: string): Promise<Diary | null> {
@@ -54,13 +58,17 @@ export async function getNewsList(
     return emptyList<News>();
   }
 
-  return client.getList<News>({
-    endpoint: "news",
-    queries: {
-      orders: "-publishedAt",
-      ...queries
-    }
-  });
+  try {
+    return await client.getList<News>({
+      endpoint: "news",
+      queries: {
+        orders: "-publishedAt",
+        ...queries
+      }
+    });
+  } catch {
+    return emptyList<News>();
+  }
 }
 
 export function getSiteUrl() {

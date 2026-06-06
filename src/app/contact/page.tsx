@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,92 +10,39 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
-  const isReady = Boolean(endpoint);
+  const googleFormUrl = process.env.NEXT_PUBLIC_GOOGLE_FORM_URL;
 
   return (
     <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
       <div className="mb-10 text-center">
-        <p className="mb-3 text-xs font-medium tracking-[0.22em] text-text/55">CONTACT</p>
-        <h1 className="font-display text-3xl font-bold leading-relaxed text-primary md:text-5xl">お問い合わせ</h1>
+        <p className="section-tag mb-4">CONTACT</p>
+        <h1 className="font-display text-3xl font-black leading-relaxed tracking-tight text-primary md:text-5xl">お問い合わせ</h1>
         <div className="mx-auto mt-5 h-px w-12 bg-accent" />
-        <p className="mx-auto mt-7 max-w-2xl text-sm leading-8 text-text/68">
+        <p className="mx-auto mt-7 max-w-2xl text-[15px] leading-8 text-text/70">
           農園についてのご質問や、販売に関するお問い合わせはこちらから。
         </p>
       </div>
 
-      {!isReady ? (
-        <div
-          id="form-status"
-          className="mb-8 rounded-lg border border-accent/40 bg-white p-5 text-sm leading-7 text-text/72"
-          role="status"
-        >
-          フォームの送信先は準備中です。Formspree のエンドポイントを
-          `NEXT_PUBLIC_FORMSPREE_ENDPOINT` に設定すると送信できるようになります。
+      <div className="rounded-[1.75rem] bg-white p-7 text-center shadow-[0_18px_60px_rgba(47,47,47,0.08)] sm:p-10">
+        <h2 className="font-display text-2xl font-black leading-relaxed text-text">Googleフォームからお問い合わせください。</h2>
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-8 text-text/70">
+          お名前、メールアドレス、お問い合わせ内容をご記入ください。農作業中などにより、返信までお時間をいただく場合があります。
+        </p>
+        {googleFormUrl ? (
+          <a href={googleFormUrl} target="_blank" rel="noreferrer" className="btn btn-primary mt-7">
+            Googleフォームを開く
+          </a>
+        ) : (
+          <p className="mx-auto mt-7 max-w-xl rounded-xl bg-primary-soft px-5 py-4 text-sm font-bold leading-7 text-primary">
+            お問い合わせフォームは準備中です。公開準備が整い次第、こちらからご連絡いただけます。
+          </p>
+        )}
+        <div className="mt-8">
+          <Link href="/#contact" className="text-sm font-bold text-primary underline underline-offset-4">
+            トップのお問い合わせ案内へ戻る
+          </Link>
         </div>
-      ) : null}
-
-      <form
-        action={endpoint || "#"}
-        method="POST"
-        aria-describedby={!isReady ? "form-status" : undefined}
-        className="grid gap-6 rounded-[2rem] bg-white p-6 shadow-sm sm:p-8"
-      >
-        <div>
-          <label htmlFor="name" className="text-sm text-text/70">
-            お名前
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            autoComplete="name"
-            required
-            placeholder="山田 太郎"
-            className="mt-1 w-full rounded border border-text/20 bg-white px-4 py-3 text-base text-text outline-none transition focus:border-primary"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="email" className="text-sm text-text/70">
-            メールアドレス
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            placeholder="example@mail.com"
-            className="mt-1 w-full rounded border border-text/20 bg-white px-4 py-3 text-base text-text outline-none transition focus:border-primary"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="message" className="text-sm text-text/70">
-            メッセージ
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={7}
-            required
-            placeholder="お気軽にご記入ください"
-            className="mt-1 w-full resize-none rounded border border-text/20 bg-white px-4 py-3 text-base text-text outline-none transition focus:border-primary"
-          />
-        </div>
-
-        <input type="hidden" name="_subject" value="信州のご隠居ファーム お問い合わせ" />
-        <div className="text-center">
-          <button
-            type="submit"
-            disabled={!isReady}
-            className="btn btn-primary px-8 py-3"
-          >
-            送信する
-          </button>
-        </div>
-      </form>
+      </div>
     </section>
   );
 }

@@ -17,7 +17,7 @@ export default function AboutPage() {
     <>
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[0.9fr_1.1fr] md:items-center md:py-28">
         <div>
-          <p className="mb-3 text-xs font-medium tracking-[0.22em] text-text/55">ABOUT</p>
+          <p className="section-tag mb-4">ABOUT</p>
           <h1 className="font-display text-3xl font-bold leading-relaxed text-primary sm:text-5xl">ご隠居について</h1>
           <p className="mt-6 text-base leading-9 text-text/78 md:text-lg">
             信州の山あいで、田んぼと畑の様子を見ながら、季節に合わせて米や野菜を育てています。
