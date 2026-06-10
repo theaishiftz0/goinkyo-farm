@@ -12,7 +12,7 @@ const footerNavigation = [
 export default function Footer() {
   return (
     <footer className="border-t-4 border-accent bg-primary-hover py-12 font-sans text-white/86">
-      <div className="mx-auto max-w-6xl px-6 text-center">
+      <div className="mx-auto max-w-7xl px-5 text-center sm:px-8">
         <p className="mb-2 text-lg font-bold text-white">信州のご隠居ファーム</p>
         <p className="mx-auto mb-6 max-w-xl text-sm leading-7 text-white/78">
           信州の山あいで、季節に寄り添いながら米や野菜を育てています。
